@@ -46,6 +46,18 @@
 	<dependencies>
 
 		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>borderlayout</artifactId>
+			<version>0.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<dependency>
 			<groupId>net.sf.dozer</groupId>
 			<artifactId>dozer</artifactId>
 			<version>5.4.0</version>

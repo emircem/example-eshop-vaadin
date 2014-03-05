@@ -17,33 +17,33 @@ import cz.jiripinkas.example.repository.ItemRepository;
 @Transactional
 public class ItemService {
 
-   @Autowired
-   private ItemRepository itemRepository;
-   
-   @Autowired
-   private Mapper mapper;
+	@Autowired
+	private ItemRepository itemRepository;
 
-   public Item save(ItemDto itemDto) {
-      Item item = mapper.map(itemDto, Item.class);
-      return itemRepository.save(item);
-   }
+	@Autowired
+	private Mapper mapper;
 
-   public ItemDto findOne(int id) {
-      Item item = itemRepository.findOne(id);
-      return mapper.map(item, ItemDto.class);
-   }
+	public Item save(ItemDto itemDto) {
+		Item item = mapper.map(itemDto, Item.class);
+		return itemRepository.save(item);
+	}
 
-   public List<ItemDto> findAll() {
-      List<ItemDto> result = new ArrayList<ItemDto>();
-      List<Item> list = itemRepository.findAll();
-      for (Item item : list) {
-         result.add(mapper.map(item, ItemDto.class));
-      }
-      return result;
-   }
+	public ItemDto findOne(int id) {
+		Item item = itemRepository.findOne(id);
+		return mapper.map(item, ItemDto.class);
+	}
 
-   public void remove(int id) {
-      itemRepository.delete(id);
-   }
+	public List<ItemDto> findAll() {
+		List<ItemDto> result = new ArrayList<ItemDto>();
+		List<Item> list = itemRepository.findAll();
+		for (Item item : list) {
+			result.add(mapper.map(item, ItemDto.class));
+		}
+		return result;
+	}
+
+	public void remove(int id) {
+		itemRepository.delete(id);
+	}
 
 }

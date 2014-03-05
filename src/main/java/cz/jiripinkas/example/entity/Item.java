@@ -13,71 +13,71 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Item implements Serializable {
 
-   private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-   @Id
-   @GeneratedValue
-   private Integer id;
+	@Id
+	@GeneratedValue
+	private Integer id;
 
-   @NotNull(message = "Name cannot be empty!")
-   private String name;
+	@NotNull(message = "Name cannot be empty!")
+	private String name;
 
-   private String description;
+	private String description;
 
-   @Min(value = 1, message = "Price must not be zero!")
-   private double price;
+	@Min(value = 1, message = "Price must not be zero!")
+	private double price;
 
-   @OneToMany(mappedBy = "item")
-   private List<OrderedItem> orderedItems;
+	@OneToMany(mappedBy = "item")
+	private List<OrderedItem> orderedItems;
 
-   public Item() {
-   }
+	public Item() {
+	}
 
-   public Item(Integer id, String name, String description, double price) {
-      this.id = id;
-      this.name = name;
-      this.description = description;
-      this.price = price;
-   }
+	public Item(Integer id, String name, String description, double price) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.price = price;
+	}
 
-   public List<OrderedItem> getOrderedItems() {
-      return orderedItems;
-   }
+	public List<OrderedItem> getOrderedItems() {
+		return orderedItems;
+	}
 
-   public void setOrderedItems(List<OrderedItem> orderedItems) {
-      this.orderedItems = orderedItems;
-   }
+	public void setOrderedItems(List<OrderedItem> orderedItems) {
+		this.orderedItems = orderedItems;
+	}
 
-   public double getPrice() {
-      return price;
-   }
+	public double getPrice() {
+		return price;
+	}
 
-   public void setPrice(double price) {
-      this.price = price;
-   }
+	public void setPrice(double price) {
+		this.price = price;
+	}
 
-   public Integer getId() {
-      return id;
-   }
+	public Integer getId() {
+		return id;
+	}
 
-   public void setId(Integer id) {
-      this.id = id;
-   }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-   public String getName() {
-      return name;
-   }
+	public String getName() {
+		return name;
+	}
 
-   public void setName(String name) {
-      this.name = name;
-   }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-   public String getDescription() {
-      return description;
-   }
+	public String getDescription() {
+		return description;
+	}
 
-   public void setDescription(String description) {
-      this.description = description;
-   }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 }

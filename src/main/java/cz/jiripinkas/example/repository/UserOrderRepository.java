@@ -10,10 +10,10 @@ import cz.jiripinkas.example.entity.UserOrder;
 
 public interface UserOrderRepository extends JpaRepository<UserOrder, Integer> {
 
-   @Query("select distinct o from UserOrder o left join fetch o.orderedItems oi join fetch oi.item")
-   List<UserOrder> findAllFetch();
+	@Query("select distinct o from UserOrder o left join fetch o.orderedItems oi left join fetch oi.item")
+	List<UserOrder> findAllFetch();
 
-   @Query("select distinct o from UserOrder o left join fetch o.orderedItems oi join fetch oi.item where o.id = :id")
-   UserOrder findOneFetch(@Param("id") int id);
+	@Query("select distinct o from UserOrder o left join fetch o.orderedItems oi left join fetch oi.item where o.id = :id")
+	UserOrder findOneFetch(@Param("id") int id);
 
 }

@@ -10,34 +10,34 @@ import com.vaadin.ui.TextField;
 
 public abstract class OrderForm extends CustomComponent {
 
-   private Label label;
-   private TextField textField;
-   private Button button;
+	private Label label;
+	private TextField textField;
+	private Button button;
 
-   public OrderForm() {
-      label = new Label("order items:");
-      textField = new TextField();
-      button = new Button("order now");
-      HorizontalLayout layout = new HorizontalLayout(label, textField, button);
-      layout.setSpacing(true);
-      setCompositionRoot(layout);
-      button.addClickListener(new ClickListener() {
+	public OrderForm() {
+		label = new Label("order items:");
+		textField = new TextField();
+		button = new Button("order now");
+		HorizontalLayout layout = new HorizontalLayout(label, textField, button);
+		layout.setSpacing(true);
+		setCompositionRoot(layout);
+		button.addClickListener(new ClickListener() {
 
-         @Override
-         public void buttonClick(ClickEvent event) {
-            onSubmit();
-         }
-      });
-   }
+			@Override
+			public void buttonClick(ClickEvent event) {
+				onSubmit();
+			}
+		});
+	}
 
-   public abstract void onSubmit();
+	public abstract void onSubmit();
 
-   public int getQuantity() {
-      return Integer.parseInt(textField.getValue());
-   }
+	public int getQuantity() {
+		return Integer.parseInt(textField.getValue());
+	}
 
-   public void init() {
-      textField.setValue("1");
-   }
+	public void init() {
+		textField.setValue("1");
+	}
 
 }

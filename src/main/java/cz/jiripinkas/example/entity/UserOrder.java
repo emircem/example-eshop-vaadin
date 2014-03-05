@@ -1,4 +1,5 @@
 package cz.jiripinkas.example.entity;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -23,20 +24,19 @@ public class UserOrder implements Serializable {
 	@Column(name = "USER_ORDER_ID")
 	private Integer id;
 
-	@NotNull(message="{emptyName}")
-	private String name;
+	private String name = "";
 
-	private String street;
+	private String city = "";
 
-	private String zip;
+	private String street = "";
 
-	private String city;
+	private String zip = "";
 
 	@Column(name = "ORDER_DATE")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date orderDate;
 
-	@OneToMany(mappedBy = "userOrder", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy = "userOrder", cascade = CascadeType.ALL)
 	private List<OrderedItem> orderedItems;
 
 	private static final long serialVersionUID = 1L;

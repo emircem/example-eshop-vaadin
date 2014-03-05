@@ -16,21 +16,21 @@ import cz.jiripinkas.example.entity.UserOrder;
 @Transactional
 public class BasketService {
 
-   @Autowired
-   private UserOrderService userOrderService;
+	@Autowired
+	private UserOrderService userOrderService;
 
-   @Autowired
-   private OrderedItemService orderedItemService;
+	@Autowired
+	private OrderedItemService orderedItemService;
 
-   public void save(Basket basket, UserOrder userOrder) {
-      userOrder.setOrderDate(new Date());
-      userOrder = userOrderService.save(userOrder);
-      Collection<OrderedItem> items = basket.getItems();
-      for (OrderedItem orderedItem : items) {
-         orderedItem.setUserOrder(userOrder);
-         orderedItemService.save(orderedItem);
-      }
-      basket.clear();
-   }
+	public void save(Basket basket, UserOrder userOrder) {
+		userOrder.setOrderDate(new Date());
+		userOrder = userOrderService.save(userOrder);
+		Collection<OrderedItem> items = basket.getItems();
+		for (OrderedItem orderedItem : items) {
+			orderedItem.setUserOrder(userOrder);
+			orderedItemService.save(orderedItem);
+		}
+		basket.clear();
+	}
 
 }

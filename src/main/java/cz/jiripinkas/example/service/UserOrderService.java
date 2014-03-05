@@ -14,19 +14,19 @@ import cz.jiripinkas.example.repository.UserOrderRepository;
 @Transactional
 public class UserOrderService {
 
-   @Autowired
-   private UserOrderRepository userOrderRepository;
+	@Autowired
+	private UserOrderRepository userOrderRepository;
 
-   public UserOrder save(UserOrder userOrder) {
-      return userOrderRepository.save(userOrder);
-   }
+	public UserOrder save(UserOrder userOrder) {
+		return userOrderRepository.save(userOrder);
+	}
 
-   public UserOrder findOne(int userOrderId) {
-      return userOrderRepository.findOne(userOrderId);
-   }
+	public UserOrder findOne(int userOrderId) {
+		return userOrderRepository.findOne(userOrderId);
+	}
 
-   public List<UserOrder> findAll() {
-      return userOrderRepository.findAll();
-   }
+	public List<UserOrder> findAll() {
+		return userOrderRepository.findAllFetch();
+	}
 
 }

@@ -1,4 +1,5 @@
 package cz.jiripinkas.example.entity;
+
 import java.io.Serializable;
 
 import javax.persistence.Entity;

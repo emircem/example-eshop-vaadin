@@ -12,15 +12,15 @@ import cz.jiripinkas.example.repository.OrderedItemRepository;
 @Transactional
 public class OrderedItemService {
 
-   @Autowired
-   private OrderedItemRepository orderedItemRepository;
+	@Autowired
+	private OrderedItemRepository orderedItemRepository;
 
-   public OrderedItem save(OrderedItem orderedItem) {
-      return orderedItemRepository.save(orderedItem);
-   }
+	public OrderedItem save(OrderedItem orderedItem) {
+		return orderedItemRepository.save(orderedItem);
+	}
 
-   public OrderedItem findOne(int orderedItemId) {
-      return orderedItemRepository.findOne(orderedItemId);
-   }
+	public OrderedItem findOne(int orderedItemId) {
+		return orderedItemRepository.findOne(orderedItemId);
+	}
 
 }
